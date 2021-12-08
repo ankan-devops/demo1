@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag 264322735540.dkr.ecr.ap-southeast-1.amazonaws.com/demo1:latest
+        docker build . --file Dockerfile --tag demo1:latest
     - name: Push to ECR
       id: ecr
       uses: jwalton/gh-ecr-push@v1
@@ -24,4 +24,4 @@ jobs:
         access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         region: ap-southeast-1
-        image: 264322735540.dkr.ecr.ap-southeast-1.amazonaws.com/demo1:latest
+        image: demo1:latest
